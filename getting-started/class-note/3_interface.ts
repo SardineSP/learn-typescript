@@ -55,18 +55,18 @@ Object.keys(obj).forEach(function (value) {
 
 })
 
-// 인터페이스 확장
+// // 인터페이스 확장
 // interface Person {
 //     name: string;
 //     age: number;
 // }
 
-interface Developer extends Person {
-    language: string;
-}
+// interface Developer extends Person {
+//     language: string;
+// }
 
-var test2: Developer = {
-    language: 'hi',
-    age: 100,
-    name: '이름'
-}
+// var test2: Developer = {
+//     language: 'hi',
+//     age: 100,
+//     name: '이름'
+// }
