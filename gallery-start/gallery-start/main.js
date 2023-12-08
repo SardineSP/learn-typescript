@@ -31,12 +31,30 @@ btn.onclick = function () {
     }
 }
 
-thumbBar.onclick = function () {
-    var imgNum = 1;
-    const newImage = document.createElement('img');
-    newImage.setAttribute('src', 'images/pic' + imgNum);
-    newImage.setAttribute('alt', xxx);
-    thumbBar.appendChild(newImage);
+// 이미지 생성 코드
+var fileNo = [1, 2, 3, 4, 5];
 
+for (i = 0; i < fileNo.length; i++) {
+    let thumbNail = document.createElement('img');
+    thumbNail.className = 'img' + fileNo[i];
+    thumbNail.src = 'images/pic' + fileNo[i] + '.jpg';
+    thumbNail.onclick = function () {
+        displayedImage.setAttribute('src', thumbNail.src);
+    };
+    thumbBar.appendChild(thumbNail);
 }
+
+// 예제 내 예문인데 참고만 함
+// thumbBar.onclick = function () {
+//     var imgNum = 1;
+//     const newImage = document.createElement('img');
+//     newImage.setAttribute('src', 'images/pic' + imgNum);
+//     newImage.setAttribute('alt', xxx);
+//     thumbBar.appendChild(newImage);
+
+// }
+
+
+
+
 
