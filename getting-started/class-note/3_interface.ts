@@ -43,11 +43,11 @@ interface StringRegexDictionary {
     [key: string]: RegExp;
 }
 
-var obj: StringRegexDictionary = {
-    // sth: /abc/,
-    cssFile: /\.css$/,
-    jsFile: /\.js$/,
-}
+// var obj: StringRegexDictionary = {
+//     // sth: /abc/,
+//     cssFile: /\.css$/,
+//     jsFile: /\.js$/,
+// }
 
 obj['cssFile'] = /\.css$/
 

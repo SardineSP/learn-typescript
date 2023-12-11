@@ -1,4 +1,8 @@
-function
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+var capt = new Person('캡틴', 100);
 
 
 class Person {
