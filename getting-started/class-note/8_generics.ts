@@ -57,12 +57,12 @@ const login = logText<boolean>(true);
 // const obj: Dropdown = { value: 'abc', selected: false };
 
 
-interface Dropdown<T> {
-    value: T;
-    selected: boolean;
-}
+// interface Dropdown<T> {
+//     value: T;
+//     selected: boolean;
+// }
 
-const obj: Dropdown<string> = { value: 'abc', selected: false };
+// const obj: Dropdown<string> = { value: 'abc', selected: false };
 
 // 제네릭의 타입제한
 // function logTextLength<T>(text: T[]): T[] {

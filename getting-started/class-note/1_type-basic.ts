@@ -23,10 +23,10 @@ let address: [string, number] = ['gangnam', 100];
 //     age: 100
 // }
 
-let person: { name: string, age: number } = {
-  name: 'beacon',
-  age: 120
-}
+// let person: { name: string, age: number } = {
+//   name: 'beacon',
+//   age: 120
+// }
 
 // TS 진위값
 let show: boolean = true;
