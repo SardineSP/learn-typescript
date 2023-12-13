@@ -1,5 +1,5 @@
 {
-    "complierOptions": {
+    "compilerOptions": {
         "allowJs": true,
         "target": "ES5",
         "outDir": "./built",
