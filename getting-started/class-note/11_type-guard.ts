@@ -1,12 +1,12 @@
-// interface Developer {
-//     name: string;
-//     skill: string;
-// }
+interface Developer {
+    name: string;
+    skill: string;
+}
 
-// interface Person {
-//     name: string;
-//     age: number;
-// }
+interface Person {
+    name: string;
+    age: number;
+}
 
 function introduce(): Developer | Person {
     return { name: 'Tony', age: 33, skill: 'Making' }

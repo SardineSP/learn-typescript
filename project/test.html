@@ -1,0 +1,30 @@
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        function f() {
+            try {
+                throw "예외";
+            } catch (e) {
+                console.log('내부 "예외" 포획');
+                throw e; // finally 블록의 실행이 끝날 때까지 중단
+            } finally {
+                return false; // 앞선 throw보다 우선함
+            }
+            // return false가 실행됨
+        }
+
+        try {
+            console.log(f());
+        } catch (e) {
+            // 도달 불가능한 catch 블록!
+            // f()가 실행되면 `finally`에서 false를 반환함
+            // 반환이 catch의 throw보다 우선했으므로 예외가 없음
+            console.log('caught outer "bogus"');
+        }
+    </script>
+</body>
+
+</html>
