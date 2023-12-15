@@ -1,11 +1,9 @@
-interface Global {
-  newCase: number;
-  totalCase: number;
-  death: number;
-  recovered: number;
-}
-
 export interface CovidSummaryResponce {
-  countriName: string;
-  Global: Global;
+  countriNm: string;
+  totalCnt: number;
+  deathCnt: number;
+  qurRate: number;
+  incDec: number;
+  incDecK: number;
+  incDecF: number;
 }

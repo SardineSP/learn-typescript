@@ -49,11 +49,11 @@ const isRecoveredLoading = false;
 // api
 function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponce>> {
   const url =
-    'https://gist.githubusercontent.com/SardineSP/b2b2ab1619ba79c0ea9586a58456c506/raw/86410122ed1eb8ce281595f38a5c5b121b83ad4a/gistfile1.json';
+    'https://api.corona-19.kr/korea/?serviceKey=63EkLd4HBFAt1rseuqDcXSZTJ9jzoMpnP';
   return axios.get(url);
 }
 
-fetchCovidSummary().then(res => res.data.Countries);
+fetchCovidSummary().then(res => res.data.countriNm);
 
 enum CovidStatus {
   Confirmed = 'confirmed',
