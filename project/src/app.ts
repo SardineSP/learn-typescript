@@ -1,3 +1,12 @@
+// 라이브러리 로딩
+// import 변수명 from '라이브러리 이름'
+// 변수, 함수 임포트 문법
+// import {} from '파일 상대 경로';
+import axios, { AxiosResponse } from 'axios';
+import { Chart } from 'chart.js';
+// 타입 모듈
+import { CovidSummaryResponce } from './covid/index';
+
 // utils
 function $(selector: string) {
   return document.querySelector(selector);
@@ -7,7 +16,7 @@ function getUnixTimestamp(date: Date) {
 }
 
 // DOM
-let a: Element | HTMLElement | HTMLParagraphElement;
+// let a: Element | HTMLElement | HTMLParagraphElement;
 const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
 const deathsTotal = $('.deaths') as HTMLParagraphElement;
 const recoveredTotal = $('.recovered') as HTMLParagraphElement;
@@ -38,10 +47,13 @@ let isDeathLoading = false;
 const isRecoveredLoading = false;
 
 // api
-function fetchCovidSummary() {
-  const url = 'https://api.covid19api.com/summary';
+function fetchCovidSummary(): Promise<AxiosResponse<CovidSummaryResponce>> {
+  const url =
+    'https://gist.githubusercontent.com/SardineSP/b2b2ab1619ba79c0ea9586a58456c506/raw/86410122ed1eb8ce281595f38a5c5b121b83ad4a/gistfile1.json';
   return axios.get(url);
 }
+
+fetchCovidSummary().then(res => res.data.Countries);
 
 enum CovidStatus {
   Confirmed = 'confirmed',
