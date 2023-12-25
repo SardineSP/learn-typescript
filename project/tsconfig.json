@@ -2,7 +2,7 @@
     "compilerOptions": {
         "allowJs": true,
         "target": "ES5",
-        "outDir": "./built",
+        "outDir": "./dist",
         "moduleResolution": "Node",
         "lib": [
             "ES2015",
@@ -10,7 +10,9 @@
             "DOM.Iterable"
         ],
         "noImplicitAny": true,
-        "typeRoots": ["./node_modules/@types", "./types"]
+        "typeRoots": ["./node_modules/@types", "./types"],
+        "strict": true,
+        //"strictFunctionTypes": false
     },
     "include": [
         "./src/**/*"
