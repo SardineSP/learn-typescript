@@ -13,8 +13,9 @@ import {
 } from './covid/index';
 
 // utils
-function $<T>(selector: string) {
-  return document.querySelector(selector);
+function $<T extends HTMLElement>(selector: string) {
+  const element = document.querySelector(selector);
+  return element as T;
 }
 function getUnixTimestamp(date: Date | string) {
   return new Date(date).getTime();
@@ -22,8 +23,9 @@ function getUnixTimestamp(date: Date | string) {
 
 // DOM
 // let a: Element | HTMLElement | HTMLParagraphElement;
-const temp = $<HTMLParagraphElement>('.abc')
-const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
+// const temp = $<HTMLParagraphElement>('.abc');
+const temp = $('.abc');
+const confirmedTotal = $<HTMLSpanElement>('.confirmed-total');
 const deathsTotal = $('.deaths') as HTMLParagraphElement;
 const recoveredTotal = $('.recovered') as HTMLParagraphElement;
 const lastUpdatedTime = $('.last-updated-time') as HTMLParagraphElement;
@@ -215,7 +217,7 @@ async function setupData() {
 
 function renderChart(data: number[], labels: string[]) {
   const lineChart = $('#lineChart') as HTMLCanvasElement;
-  const ctx = lineChart.getContext('2d');
+  const ctx = lineChart.getContext('2d')!;
   Chart.defaults.color = '#f5eaea';
   Chart.defaults.font.family = 'Exo 2';
   new Chart(ctx, {
